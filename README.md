@@ -1,4 +1,6 @@
-#vue-app demo from https://github.com/chjtx/JTaro-Tutorial
+#vue-app 
+
+demo from https://github.com/chjtx/JTaro-Tutorial
 
 ## 安装依赖
 

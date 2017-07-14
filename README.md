@@ -1,6 +1,6 @@
 #vue-app 
 
-demo from https://github.com/chjtx/JTaro-Tutorial
+demo from https://github.com/chjtx/JTaro-Tutorial  http://git.oschina.net/chenjianlong/vue-app/
 
 ## 安装依赖
 

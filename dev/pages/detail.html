@@ -1,0 +1,36 @@
+<style>
+.detail-body {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  bottom: 45px;
+}
+.detail-body h1 {
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+}
+.content {
+  padding: 10px;
+}
+.content p {
+  text-indent: 2em;
+}
+.time {
+  padding-left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+</style>
+<div>
+  <com-header />
+  <div class="detail-body content-bg">
+    <div>
+      <h1>{{detail.title}}</h1>
+      <p class="time">{{detail.time}}</p>
+      <div class="content" v-html="detail.content"></div>
+    </div>
+  </div>
+  <com-comment class="comment-box" v-bind:count="commentLength" v-bind:detail="detail"/>
+</div>

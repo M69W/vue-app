@@ -1,0 +1,61 @@
+<style>
+this {
+  width: 100%;
+  height: 44px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  line-height: 44px;
+}
+.icon {
+  font-size: 26px;
+}
+.icon-post {
+  position: relative;
+  top: 2px;
+}
+.icon-comment {
+  position: relative;
+  top: 2px;
+  color: #1e90ff;
+}
+.icon-text {
+  position: relative;
+  top: 2px;
+  color: #1e90ff;
+}
+.icon-share {
+  position: relative;
+  top: 2px;
+}
+.write {
+  padding-left: 10px;
+}
+.text {
+  font-size: 14px;
+  color: #888;
+  margin-left: 5px;
+}
+.comment {
+  float: right;
+}
+.count {
+  font-size: 14px;
+}
+.share {
+  float: right;
+  padding: 0 10px 0 10px;
+}
+</style>
+<div>
+  <div class="share" v-on:click="popShareBox">
+    <span class="icon icon-share"></span>
+  </div>
+  <div class="comment" v-on:click="gotoCommentDetail">
+    <span class="icon" v-bind:class="[!isNaN(Number(count)) ? 'icon-comment' : 'icon-text']"></span>
+    <span v-if="count" class="count">{{count}}</span>
+  </div>
+  <div class="write" v-on:click="popCommentBox">
+    <span class="icon icon-post"></span>
+    <span class="text">评一下</span>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<style>
+.reply-body {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  bottom: 45px;
+  font-size: 14px;
+}
+.reply-body h1 {
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+}
+.first-li {
+  padding: 10px;
+}
+.name {
+  color: #888;
+}
+.praise {
+  float: right;
+}
+.second-ul {
+  padding: 10px;
+  padding-bottom: 0;
+  background: #eee;
+  margin: 10px 0;
+}
+.second-li {
+  padding-bottom: 10px;
+}
+.no-comment {
+  color: #999;
+  text-align: center;
+  margin-top: 100px;
+}
+</style>
+<div>
+  <com-header title="评论" />
+  <div class="reply-body content-bg">
+    <div>
+      <h1>{{detail.title}}</h1>
+      <div v-if="detail.comment && !detail.comment.length" class="no-comment">暂无评论</div>
+      <ul>
+        <li v-for="item in detail.comment" class="first-li">
+          <div class="name">
+            <div class="praise">{{item.belike}}<i class="icon icon-down"></i></div>
+            {{item.name}}
+          </div>
+          <p>{{item.say}}</p>
+          <ul v-if="item.follow.length" class="second-ul">
+            <li v-for="i in item.follow" class="second-li">
+              <p class="name">{{i.name}}:</p>
+              <p>{{i.say}}</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <com-comment class="comment-box" />
+</div>
